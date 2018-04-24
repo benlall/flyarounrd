@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>New review</h1>
+    <form>
+        <label for="text">Text</label>
+        <textarea name="text" id="text"></textarea><br>
+        <label for="note">Note</label>
+        <input type="number" name="note" id="note"><br>
+        <input type="submit" value="Create" />
+    </form>
+
+
+
+
+    <ul>
+        <li>
+            <a href="{{ path('review_index') }}">Back to review</a>
+        </li>
+    </ul>
+{% endblock %}

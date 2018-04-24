@@ -45,10 +45,6 @@
                     <th>Flight's description</th>
                     <td>{{ flight.description }}</td>
                 </tr>
-                <tr>
-                    <th>Review's description</th>
-                    <td>{{ review. }}</td>
-                </tr>
                 </tbody>
             </table>
 
@@ -57,24 +53,6 @@
                     <a href="/">Return to homepage</a>
                 </li>
             </ul>
-            {% endblock %}
-
-            <h1>Routes disponibles :</h1>
-            <ul>
-                <li>
-                    <a href="{{ path('planemodel_index') }}">Voir les avions</a>
-                </li>
-                <li>
-                    <a href="{{ path('reservation_index') }}">Voir les reservations</a>
-                </li>
-                <li>
-                    <a href="{{ path('flight_index') }}">Voir les vols</a>
-                </li>
-                <li>
-                    <a href="{{ path('site_index') }}">Voir les terrains</a>
-                </li>
-            </ul>
-
         </div>
     </div>
 {% endblock %}
