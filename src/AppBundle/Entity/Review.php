@@ -56,9 +56,9 @@ class Review
     private $note;
 
 
-    public function __toString() : string
+    public function __toString()
     {
-        return $this->id;
+        return (string)$this->id;
     }
 
     /**
