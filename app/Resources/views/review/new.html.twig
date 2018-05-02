@@ -2,16 +2,11 @@
 
 {% block body %}
     <h1>New review</h1>
-    <form>
-        <label for="text">Text</label>
-        <textarea name="text" id="text"></textarea><br>
-        <label for="note">Note</label>
-        <input type="number" name="note" id="note"><br>
-        <input type="submit" value="Create" />
-    </form>
 
-
-
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Create" />
+    {{ form_end(form) }}
 
     <ul>
         <li>
