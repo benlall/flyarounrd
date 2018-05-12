@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
     <h1>Flights list</h1>
 
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -44,6 +45,9 @@
     <ul>
         <li>
             <a href="{{ path('flight_new') }}">Create a new flight</a>
+        </li>
+        <li>
+            <a href="/">Return to homepage</a>
         </li>
     </ul>
 {% endblock %}

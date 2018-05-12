@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Planemodels list</h1>
 
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -42,6 +42,9 @@
     <ul>
         <li>
             <a href="{{ path('planemodel_new') }}">Create a new planeModel</a>
+        </li>
+        <li>
+            <a href="/">Return to homepage</a>
         </li>
     </ul>
 {% endblock %}
