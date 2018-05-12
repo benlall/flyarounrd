@@ -122,7 +122,6 @@ class Flight
     public function setNbFreeSeats($nbFreeSeats)
     {
         $this->nbFreeSeats = $nbFreeSeats;
-
         return $this;
     }
 
@@ -146,7 +145,6 @@ class Flight
     public function setSeatPrice($seatPrice)
     {
         $this->seatPrice = $seatPrice;
-
         return $this;
     }
 
@@ -170,7 +168,6 @@ class Flight
     public function setTakeOffTime($takeOffTime)
     {
         $this->takeOffTime = $takeOffTime;
-
         return $this;
     }
 
@@ -194,7 +191,6 @@ class Flight
     public function setPublicationDate($publicationDate)
     {
         $this->publicationDate = $publicationDate;
-
         return $this;
     }
 
@@ -218,7 +214,6 @@ class Flight
     public function setDescription($description)
     {
         $this->description = $description;
-
         return $this;
     }
 
@@ -242,7 +237,6 @@ class Flight
     public function setWasDone($wasDone)
     {
         $this->wasDone = $wasDone;
-
         return $this;
     }
 
@@ -266,7 +260,6 @@ class Flight
     public function setDeparture(\AppBundle\Entity\Site $departure)
     {
         $this->departure = $departure;
-
         return $this;
     }
 
@@ -290,7 +283,6 @@ class Flight
     public function setArrival(\AppBundle\Entity\Site $arrival)
     {
         $this->arrival = $arrival;
-
         return $this;
     }
 
@@ -314,7 +306,6 @@ class Flight
     public function setPlane(\AppBundle\Entity\PlaneModel $plane)
     {
         $this->plane = $plane;
-
         return $this;
     }
 
@@ -338,7 +329,6 @@ class Flight
     public function setPilot(\AppBundle\Entity\User $pilot)
     {
         $this->pilot = $pilot;
-
         return $this;
     }
 
@@ -369,7 +359,6 @@ class Flight
     public function addFlight(\AppBundle\Entity\Reservation $flight)
     {
         $this->flights[] = $flight;
-
         return $this;
     }
 

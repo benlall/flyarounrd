@@ -2,7 +2,6 @@
 
 namespace AppBundle\Form;
 
-
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -28,9 +27,9 @@ class ReviewType extends AbstractType
     ->add('note', IntegerType::class, array('attr' => array('min' => 0, 'max' => 5, 'label'=> 'Note')))
     ->add('agreeTerms', CheckboxType::class, array('mapped' => false)) // mapped => false necessaire car le champ agreeTerms ne figure pas ds la table
     ->add('userRated', EntityType::class, array('class' => 'AppBundle\Entity\User', 'query_builder' => function(EntityRepository $er) {
-        return $er->createQueryBuilder('u')->orderBy('u.lastName', 'ASC');
+        return $er->createQueryBuilder('u')->orderBy('u.phoneNumber', 'ASC');
         },
-            'choice_label' => 'lastname'))
+            'choice_label' => 'phoneNumber'))
     ->add('reviewAuthor');
     }
 

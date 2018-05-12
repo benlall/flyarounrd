@@ -5,7 +5,8 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Flight;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Flight controller.
@@ -23,7 +24,6 @@ class FlightController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $flights = $em->getRepository('AppBundle:Flight')->findAll();
 
         return $this->render('flight/index.html.twig', array(
