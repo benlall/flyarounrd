@@ -19,7 +19,9 @@ class ReservationType extends AbstractType
             ->add('wasDone')
             ->add('passenger')
             ->add('flight');
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

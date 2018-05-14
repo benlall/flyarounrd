@@ -30,14 +30,17 @@ class ReviewType extends AbstractType
         return $er->createQueryBuilder('u')->orderBy('u.phoneNumber', 'ASC');
         },
             'choice_label' => 'phoneNumber'))
-    ->add('reviewAuthor');
+    ->add('reviewAuthor')
+    /* on peut add ou non le champ submit si il n'y est pas il faut l'ajouter en twig ds la vue*/;
     }
+
+    //si on ne renseigne pas le label en option alors le label par default est nom du champ avec majuscule.
 
     /**
      * {@inheritdoc} Targeting Review entity
      */
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver) // donne les valeurs labels par default à partir de l'entity renseigné ci-dessous
     {
         $resolver->setDefaults(array('data_class' => 'AppBundle\Entity\Review'
         ));
