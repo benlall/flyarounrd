@@ -12,6 +12,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Flight
 {
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Site", inversedBy="departures")
@@ -41,23 +49,6 @@ class Flight
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Reservation", mappedBy="flight")
      */
     private $flights;
-
-    /*
-    * Adding personal methods / variables
-    */
-    public function __toString()
-    {
-        return $this->departure . ' ' . $this->arrival;
-    }
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
 
     /**
      * @var int
@@ -101,6 +92,21 @@ class Flight
      */
     private $wasDone;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->flights = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /*
+        * Adding personal methods / variables
+        */
+    public function __toString()
+    {
+        return $this->departure . ' ' . $this->arrival;
+    }
 
     /**
      * Get id
@@ -340,13 +346,6 @@ class Flight
     public function getPilot()
     {
         return $this->pilot;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->flights = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
