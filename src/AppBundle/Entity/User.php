@@ -13,30 +13,6 @@ use FOS\UserBundle\Model\User as BaseUser;
  */
 class User extends BaseUser
 {
-
-    /*
-    * Adding personal methods / variables
-    */
-    public function __toString()
-    {
-        return $this->firstName . " " . $this->lastName;
-    }
-
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Review", mappedBy="reviewAuthor")
-     */
-    private $reviewAuthors;
-
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Reservation", mappedBy="passenger")
-     */
-    private $passengers;
-
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="pilot")
-     */
-    private $pilots;
-
     /**
      * @var int
      *
@@ -77,14 +53,14 @@ class User extends BaseUser
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="creationDate", type="datetime")
+     * @ORM\Column(name="creationDate", type="datetime", nullable=true)
      */
     private $creationDate;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="note", type="smallint")
+     * @ORM\Column(name="note", type="smallint", nullable=true)
      */
     private $note;
 
@@ -95,6 +71,38 @@ class User extends BaseUser
      */
     private $isACertifiedPilot;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Review", mappedBy="reviewAuthor")
+     */
+    private $reviewAuthors;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Reservation", mappedBy="passenger")
+     */
+    private $passengers;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="pilot")
+     */
+    private $pilots;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->reviewAuthors = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->pilots = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /*
+    * Adding personal methods / variables
+    */
+    public function __toString()
+    {
+        return $this->firstName . " " . $this->lastName;
+    }
 
     /**
      * Get id
@@ -272,15 +280,6 @@ class User extends BaseUser
     public function getIsACertifiedPilot()
     {
         return $this->isACertifiedPilot;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->reviewAuthors = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->pilots = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

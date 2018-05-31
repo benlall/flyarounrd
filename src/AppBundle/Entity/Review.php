@@ -12,19 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Review
 {
-
-    /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $userRated;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="reviewAuthors")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $reviewAuthor;
-
     /**
      * @var int
      *
@@ -54,6 +41,19 @@ class Review
      * @ORM\Column(name="note", type="smallint")
      */
     private $note;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $userRated;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="reviewAuthors")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $reviewAuthor;
 
 
     public function __toString()
