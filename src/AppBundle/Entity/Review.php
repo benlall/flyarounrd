@@ -55,7 +55,6 @@ class Review
      */
     private $reviewAuthor;
 
-
     public function __toString()
     {
         return (string)$this->id;

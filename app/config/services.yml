@@ -1,7 +1,8 @@
 # Learn more about services, parameters and containers at
 # https://symfony.com/doc/current/service_container.html
 parameters:
-    #parameter_name: value
+    locale: en
+    unit: km
 
 services:
     # default configuration for services in *this* file
@@ -39,3 +40,8 @@ services:
     AppBundle\Service\FlightInfo:
         arguments:
             $unit: '%unit%'
+
+    AppBunble\Service\Mailer:
+
+
+    #on ajoute ici tous les services n'etant pas prexistant ds symfo ainsi que leurs arguments

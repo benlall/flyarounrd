@@ -35,11 +35,11 @@
             </tr>
             <tr>
                 <th>Distance</th>
-                <th>{% if distance %} {{ distance|number_format(2, ',', ' ') }} {% endif %} {{ unit }}</th>
+                <td>{% if distance %} {{ distance|number_format(2, ',', ' ') }} {% endif %} {{ unit }}</td>
             </tr>
             <tr>
                 <th>Flight time</th>
-                <th>{% if flightTime %} {{ flightTime }} {% endif %}</th>
+                <td>{% if flightTime %} {{ flightTime }} {% endif %}</td>
             </tr>
         </tbody>
     </table>

@@ -60,7 +60,7 @@ class FlightInfo
     public function getTime($cruiseSpeed, $distance)
     {
         $floatTime = $distance / $cruiseSpeed;
-        $fT = gmdate('H:i:s', floor($floatTime * 3600));
+        $fT = gmdate('H:i', floor($floatTime * 3600));
         return $fT;
     }
 

@@ -24,7 +24,9 @@ class FlightType extends AbstractType
             ->add('arrival')
             ->add('plane')
             ->add('pilot');
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
@@ -41,6 +43,5 @@ class FlightType extends AbstractType
     {
         return 'appbundle_flight';
     }
-
 
 }

@@ -19,7 +19,9 @@ class PlaneModelType extends AbstractType
             ->add('cruiseSpeed')
             ->add('planeNbSeats')
             ->add('isAvailable');
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
@@ -36,6 +38,5 @@ class PlaneModelType extends AbstractType
     {
         return 'appbundle_planemodel';
     }
-
 
 }
