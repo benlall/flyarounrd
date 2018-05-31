@@ -2,7 +2,6 @@
 
 namespace AppBundle\Form;
 
-
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -28,17 +27,20 @@ class ReviewType extends AbstractType
     ->add('note', IntegerType::class, array('attr' => array('min' => 0, 'max' => 5, 'label'=> 'Note')))
     ->add('agreeTerms', CheckboxType::class, array('mapped' => false)) // mapped => false necessaire car le champ agreeTerms ne figure pas ds la table
     ->add('userRated', EntityType::class, array('class' => 'AppBundle\Entity\User', 'query_builder' => function(EntityRepository $er) {
-        return $er->createQueryBuilder('u')->orderBy('u.lastName', 'ASC');
+        return $er->createQueryBuilder('u')->orderBy('u.phoneNumber', 'ASC');
         },
-            'choice_label' => 'lastname'))
-    ->add('reviewAuthor');
+            'choice_label' => 'phoneNumber'))
+    ->add('reviewAuthor')
+    /* on peut add ou non le champ submit si il n'y est pas il faut l'ajouter en twig ds la vue*/;
     }
+
+    //si on ne renseigne pas le label en option alors le label par default est nom du champ avec majuscule.
 
     /**
      * {@inheritdoc} Targeting Review entity
      */
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver) // donne les valeurs labels par default à partir de l'entity renseigné ci-dessous
     {
         $resolver->setDefaults(array('data_class' => 'AppBundle\Entity\Review'
         ));

@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Reservations list</h1>
 
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -38,6 +38,9 @@
     <ul>
         <li>
             <a href="{{ path('reservation_new') }}">Create a new reservation</a>
+        </li>
+        <li>
+            <a href="/">Return to homepage</a>
         </li>
     </ul>
 {% endblock %}
