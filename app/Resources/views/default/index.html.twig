@@ -1,64 +1,45 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div id="wrapper">
-        <div id="container">
+    <div id="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><img class="plane" src="{{ asset('build/images/plane.ec239e52.jpeg') }}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <h1>Routes disponibles :</h1>
-            <ul>
-                <li>
-                    <a href="{{ path('fos_user_security_login') }}">S'identifier</a>
-                </li>
-                <li>
-                    <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
-                </li><br>
-                <li>
-                    <a href="{{ path('planemodel_index') }}">Voir les avions</a>
-                </li>
-                <li>
-                    <a href="{{ path('reservation_index') }}">Voir les reservations</a>
-                </li>
-                <li>
-                    <a href="{{ path('flight_index') }}">Voir les vols</a>
-                </li>
-                <li>
-                    <a href="{{ path('site_index') }}">Voir les terrains</a>
-                </li>
-                <li>
-                    <a href="{{ path('review_index') }}">Voir tous les avis utilisateurs</a>
-                </li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('planemodel_index') }}">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('reservation_index') }}">Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('flight_index') }}">Flights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('site_index') }}">Airports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('review_index') }}">Reviews</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
 
-            </ul>
-
-        </div>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('fos_user_security_login') }}">Sign in</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('fos_user_registration_register') }}">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h1 class="text-center">Welcome on Flyaround</h1>
     </div>
 {% endblock %}
 
-{% block stylesheets %}
-<style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-    h1 { font-size: 36px; }
-    h2 { font-size: 21px; margin-bottom: 1em; }
-    p { margin: 0 0 1em 0; }
-    a { color: #0000F0; }
-    a:hover { text-decoration: none; }
-    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-    #container { padding: 2em; }
-    #welcome, #status { margin-bottom: 2em; }
-    #welcome h1 span { display: block; font-size: 75%; }
-    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-    #icon-book { display: none; }
-
-    @media (min-width: 768px) {
-        #wrapper { width: 80%; margin: 2em auto; }
-        #icon-book { display: inline-block; }
-        #status a, #next a { display: block; }
-
-        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
-    }
-</style>
-{% endblock %}

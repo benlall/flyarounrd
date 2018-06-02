@@ -1,0 +1,43 @@
+$bg-color: blue;
+$font-size : 14px;
+
+body {
+  background: white;
+  font: $font-size sans-serif;
+}
+
+.container-fluid {
+  background-color: $bg-color;
+}
+
+h1, h2 {
+  line-height: 1.2;
+  margin: 5% 0 .5em;
+  padding: 2%;
+}
+
+h1 {
+  font-size: $font-size * 3;
+}
+
+h2 {
+  font-size: $font-size * 1.5;
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+a {
+  color: #0000F0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.plane {
+  width: 60px;
+  height: auto;
+}

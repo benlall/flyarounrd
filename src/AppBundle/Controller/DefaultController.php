@@ -19,21 +19,4 @@ class DefaultController extends Controller
         ]);
     }
 
-    //c'est ici que l'on cree les autres routes necessaires si besoin
-    /**
-     * @Route("/test", name="test", defaults={"name"="ben"})
-     */
-    public function testAction(Request $request, $name)
-    {
-        return $this->render('default/test.html.twig', [ 'name' => $name,
-        ]);
-    }
-
-    /**
-     * @Route("/form", name="form")
-     */
-    public function formAction(Request $request)
-    {
-        return $this->render('default/form.html.twig');
-    }
 }
